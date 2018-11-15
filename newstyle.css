@@ -1,0 +1,491 @@
+/* Cover and main graph  STARTS*/
+
+body {
+font: 10px sans-serif;
+background-color: rgb(246, 246, 246);
+}
+
+
+/* Navigation Starts */
+
+.menu{
+  width:100%;
+  margin: 0 auto;
+}
+
+nav {
+  background: rgb(43, 43, 43);
+  box-shadow: 0px 5px 0px #dedede;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: rgb(43, 43, 43);
+}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #dedede;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+nav ul{
+	display:flex;
+	flex-wrap: wrap;
+}
+
+nav li{
+	/* background-color: rgb(84,176,189); */
+	color: white;
+	/* padding: 16px; */
+	font-size: 16px;
+}
+
+
+
+/* Navigation Ends */
+
+
+/* Images */
+
+#image{
+  background-image: url("images/pollution2.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+#forest{
+	flex: 0 0 60%;
+	width: 80%;
+  background-image: url("images/forest.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 70vh;
+}
+
+/* Images end */
+
+/* Main text  */
+
+.title{
+	text-align: left;
+	font-size: 570%;
+	color: rgb(234, 235, 231);
+	padding-left: 10%;
+	font-family: Lato, Arial;
+
+}
+
+.row {
+	width: 100%;
+	clear: both;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+}
+
+#MainContainer{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+/* ROWS OF TEXT */
+
+#row{
+flex: 0 0 42%;
+width: 40%;
+}
+
+#row h2{
+text-align: center;
+font-size: 230%;
+font-family: Helvetica;
+}
+
+#row p{
+font-size: 160%;
+}
+
+#row h3{
+text-align: left;
+font-size: 200%;
+font-family: Helvetica;
+}
+
+
+/* Graphs Start*/
+
+.axis path,
+.axis line {
+fill: none;
+}
+
+.x.axis path {
+display: none;
+}
+
+.y.axis path {
+display: none;
+
+}
+
+.line {
+fill: none;
+stroke: rgb(40, 162, 125);
+stroke-width: 3;
+}
+
+.transport {
+fill: none;
+stroke: rgb(173, 46, 18);
+stroke-width: 3;
+}
+
+.domestic {
+fill: none;
+stroke: rgb(40, 103, 162);
+stroke-width: 3;
+}
+
+.industry {
+fill: none;
+stroke: rgb(24, 122, 51);
+stroke-width: 3;
+}
+
+
+.grid line {
+stroke: lightgrey;
+stroke-opacity: 0.7;
+shape-rendering: crispEdges;
+}
+
+.grid path {
+stroke-width: 0;
+}
+
+
+.header {
+display: flex;
+width: 100vw;
+height: 9vh;
+background-color: black;
+}
+
+.brand {
+flex: 30% 0 0;
+
+}
+
+.brand p{
+color: white;
+font-family: Helvetica;
+font-size: 200%;
+padding-left: 10%;
+
+}
+
+.brand p .classforspan{
+color:white;
+font-weight: bold;
+
+}
+
+#container {
+display: flex;
+height: 100vh;
+}
+
+.headline h1{
+flex: 0 0 30%;
+font-size: 620%;
+width: 120%;
+transform: translate(-40%, 95%);
+font-family: Helvetica;
+}
+
+.headline p{
+flex: 0 0 30%;
+font-size: 200%;
+width: 120%;
+transform: translate(-45%, 100%);
+
+}
+
+.y.axis path {
+display: none;
+stroke: lightgrey;
+stroke-opacity: 0.7;
+
+}
+
+.grid line {
+stroke: lightgrey;
+stroke-opacity: 0.7;
+}
+
+.tick line{
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+}
+
+/* line simple line chart */
+.overlay {
+        fill: none;
+        pointer-events: all;
+    }
+
+.focus circle {
+    stroke: rgb(40, 162, 125);
+    fill:white;
+  }
+
+.focus text {
+    font-size: 14px;
+}
+
+.tooltip {
+    fill: white;
+    /* opacity: 0.5; */
+    stroke: #100;
+  }
+
+.tooltip-date, .tooltip-likes {
+    font-weight: bold;
+  }
+
+.hover-line {
+  stroke: rgb(40, 162, 125);
+  stroke-width: 1px;
+  stroke-dasharray: 3,3;}
+
+
+/* BAR CHART STARTS*/
+
+.bar {
+  fill: purple;
+  opacity: 0.8;
+}
+
+/* CHARTS END*/
+
+
+/* Dropdown Councils Starts*/
+
+/* Style The Dropdown Button */
+
+#dropdown {
+  flex: 0 0 100%;
+  width: 100%;
+	text-align: center;
+}
+
+.dropbtn {
+    background-color: rgb(84,176,189);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+		margin:auto;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+		text-align:center;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+#dropdown:hover .dropdown-content {
+    display: block;
+		margin:auto;
+}
+
+/* Dropdown Councils Ends*/
+
+
+/*--footer--*/
+
+.row .footer{
+height: 35vh;
+background-color: rgb(43, 43, 43);
+margin-top: 3%;
+display: flex;
+flex-wrap: wrap;
+}
+
+
+.row .footer .col.four{
+	color:white;
+	font-family: 'Lato', sans-serif;
+	font-size: 95%;
+	/* flex: 1 0 0; */
+	margin-top: 3%;
+	margin-bottom: 1%;
+	margin-left: 5%;
+}
+
+
+.row .footer .col.four p {
+color:white;
+font-family: 'Lato', sans-serif;
+font-size: 95%;
+}
+
+/* Style all font social media*/
+.social-media{
+margin-left: 1%;
+}
+
+.fa {
+  padding: 4%;
+  font-size: 150%;
+  width: 5%;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+/* Add a hover effect */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  color: rgb(182, 180, 173);
+}
+
+/* Twitter */
+.fa-twitter {
+  color: rgb(182, 180, 173);
+}
+
+/* footer ends */
+
+/* Responsive design */
+
+
+@media screen and (max-width: 868px){
+
+
+	nav ul{
+		display:block;
+
+	}
+
+	nav li{
+		/* background-color: rgb(84,176,189); */
+		color: white;
+		/* padding: 16px; */
+		font-size: 16px;
+	}
+
+		/* Change body text */
+
+		#row{
+		flex: 0 0 80%;
+		}
+
+		#row h2{
+		text-align: center;
+		font-size: 230%;
+		}
+
+		#row p{
+
+		font-size: 160%;
+		}
+
+		/* Change image size */
+
+		#forest{
+			flex: 0 0 100%;
+		  background-image: url("images/forest.jpg");
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+		  height: 70vh;
+		}
+
+
+	};

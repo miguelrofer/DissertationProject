@@ -1,0 +1,111 @@
+
+<!-- This is the structure for the main script -->
+
+[[if(PcChangeTotal1116>0)[[Higher]]elseif(PcChangeTotal1116<0){[[Lower]]}]]
+
+[[PollutionRemoval]]
+
+<!-- End -->
+
+
+<!-- This is the structure for the Script Higher -->
+
+HIGHER
+
+Carbon emissions are still on the rise in [[FocusRowName]] despite being reduced across the country.
+
+Latest data from the Department for Business, Energy and Industrial Strategy has revealed that the local authority increased its carbon emissions by [[abs(round(PcChangeTotal1116,1))]]% from 2011 to 2016.
+
+Two years ago, [[FocusRowName]] sent to the atmosphere [[round(v_16TotalFinal,0)]] kilotonnes (kt) of CO₂, [[if(PcChangeTotal1116>=0.2){up from [[round(v_11TotalFinal,0)]]}elseif(PcChangeTotal1116<=-0.2){down from [[round(v_11TotalFinal,0)]]}elseif(PcChangeTotal1116<-0.4&&PcChangeTotal1116>0.5){in line with}]] five years earlier. One kilotonne equals to 1,000 tonnes.
+
+The heatwave that has hit Britain over this summer has raised awareness about the growing risks of climate change, fuelled by CO₂ emissions.
+
+Scientist believe that future heatwaves will be more frequent and hotter due to carbon emissions.
+
+[[if(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16Transport){The biggest chunk of the emissions, about [[round(PcTransport16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere. That includes freight and passenger transport, both private and for business purposes.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeTransport1116,1))]]% lower than}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than}elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] five years earlier.<br><br>Industrial and commercial activities were responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than in 2011, thanks to a decrease in the use of coal for electricity generation.<br><br>Lower coal consumption helped to curb the impact of the domestic sector too, despite it accounted for [[round(PcDomestic16,1)]]% of the emissions in 2016.}elseif(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16Domestic){The biggest chunk of these emissions, about [[round(PcDomestic16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeDomestic1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than}elseif(PcChangeDomestic1116>0.5){[[abs(round(PcChangeDomestic1116,1))]]% higher than}elseif(PcChangeDomestic1116<0.5&&PcChangeDomestic1116>-0.5){in line with}]] five years earlier, thanks to a decrease in the use of coal for electricity generation.<br><br>Industrial and commercial activities were responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than in 2011.<br><br>Transport accounted for [[round(PcTransport16,1)]]% of the overall emissions, [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than}elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] five years earlier.}elseif(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16IndustryandCommercial){The biggest chunk of these emissions, about [[round(PcIndustry16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeIndustry1116<-0.5){[[abs(round(PcChangeIndustry1116,1))]]% lower than}elseif(PcChangeIndustry1116>0.5){[[abs(round(PcChangeIndustry1116,1))]]% higher than in}elseif(PcChangeIndustry1116<0.5&&PcChangeIndustry1116>-0.5){in line with}]] 2011, thanks to a decrease in the use of coal for electricity generation.<br><br>The domestic sector was responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than in 2011.<br><br>Transport accounted for [[round(PcTransport16,1)]]% of the overall emissions, [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than in}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than in}elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] 2011.}]]
+
+[[if(v_16LULUCF>0){The Department for Business, Energy and Industrial Strategy also takes into account the amount of COâ produced by activities that modify the natural environment, such as the clearing of forests for use in agriculture, and the carbon dioxide taken out of air by the woodland. According to its estimates, agrarian activities released more greenhouse gases than forests could get rid of, being responsible for [[abs(round(Pc16LULUCF,1))]]% of the carbon emissions in 2016.}else{The Department for Business, Energy and Industrial Strategy also takes into account the amount of COâ taken out of the air by the woodland.According to its estimates, forests got rid of [[abs(round(Pc16LULUCF,1))]]% of the carbon emissions caused by human activities in 2016.}]]
+
+Gareth Redmond-King, head of climate change at the World Wildlife Fund UK, put the increase in emissions from transport down to the greater number of large cars on British roads.
+
+He said: "We’re aping the American market and more drivers are switching to unnecessarily large vehicles with greater carbon emissions. Bigger vehicles tend to be less efficient on fuel use.
+
+Jason Torrance, a transport expert at UK100, a network of local governments committed to promoting clean energy, called on the Government to take urgent action to tackle transport emissions.
+
+He said: "It is expected that the Government will want to give local authorities more powers to tackle air pollution in the environment legislation next year. But without significant shifts on things like electrification of railway lines, cleaner buses and taxis, plus a shift away from car dependency by designing our cities better, this trend will only get worse."
+
+<!-- End -->
+
+<!-- This is the structure for the Lower script -->
+
+LOWER
+
+​​[[if(PcChangeTotal1116==minVal(PcChangeTotal1116Column)){[[FocusRowName]] is the council that has curbed the most carbon emissions in five years in Wales, official figures show.}else{[[FocusRowName]] is one of the councils contributing most to curb climate change in Wales, official figures show.}]]
+
+Latest data from the Department for Business, Energy and Industrial Strategy has revealed that this local authority cut by [[abs(round(PcChangeTotal1116,1))]]% its carbon emissions from 2011 to 2016.
+
+In 2016, [[FocusRowName]] sent to the atmosphere [[round(v_16TotalFinal,0)]] kilotonnes (kt) of CO₂, [[if(PcChangeTotal1116>0.5){up from [[round(v_11TotalFinal,0)]]}elseif(PcChangeTotal1116<-0.5){down from [[round(v_11TotalFinal,0)]]}elseif(PcChangeTotal1116<-0.5&&PcChangeTotal1116>0.5){in line with}]] five years earlier. One kilotonne equals to 1,000 tonnes.
+
+The heatwave that slammed Britain over the last week has raised the awareness about the growing risks of climate change.
+
+Despite scientists differ on whether the current global wave of hot temperatures is caused by climate change, all agree that future heatwaves will be more frequent and hotter due to carbon emissions.
+
+[[if(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16Transport){The biggest chunk of these emissions, about [[round(PcTransport16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere. That includes freight and passenger transport, both private and for business purposes.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeTransport1116,1))]]% lower than}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than}elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] five years earlier.<br><br>Industrial and commercial activities were responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than five years earlier, thanks to a decrease in the use of coal for electricity generation.<br><br>Lower coal consumption helped to curb the impact of the domestic sector too, despite it accounted for [[round(PcDomestic16,1)]]% of the emissions in 2016.}elseif(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16Domestic){The biggest chunk of these emissions, about [[round(PcDomestic16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeDomestic1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than in}elseif(PcChangeDomestic1116>0.5){[[abs(round(PcChangeDomestic1116,1))]]% higher than in}elseif(PcChangeDomestic1116<0.5&&PcChangeDomestic1116>-0.5){in line with}]] 2011, thanks to a decrease in the use of coal for electricity generation.<br><br>Industrial and commercial activities were responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than in 2011.<br><br>Transport accounted for [[round(PcTransport16,1)]]% of the overall emissions, [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than }elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] five years earlier.}elseif(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))==v_16IndustryandCommercial){The biggest chunk of these emissions, about [[round(PcIndustry16,1)]]% of the total, stemmed from [[substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn))),'16Domestic','the domestic sector'),'16IndustryandCommercial','industrial and commercial activities'),'16Transport','transport')]], which sent [[round(maxVal(columnsInRegion(FocusRow,v_16DomesticColumn,v_16IndustryandCommercialColumn,v_16TransportColumn)),0)]] kt of COâ to the atmosphere.<br><br>The carbon footprint of this sector in [[FocusRowName]] was [[if(PcChangeIndustry1116<-0.5){[[abs(round(PcChangeIndustry1116,1))]]% lower than in}elseif(PcChangeIndustry1116>0.5){[[abs(round(PcChangeIndustry1116,1))]]% higher than in}elseif(PcChangeIndustry1116<0.5&&PcChangeIndustry1116>-0.5){in line with}]] 2011, thanks to a decrease in the use of coal for electricity generation.<br><br>The domestic sector was responsible for [[round(PcIndustry16,1)]]% of the carbon dioxide released in 2016.<br><br>Its carbon impact was [[abs(round(PcChangeIndustry1116,1))]]% lower than in 2011.<br><br>Transport accounted for [[round(PcTransport16,1)]]% of the overall emissions, [[if(PcChangeTransport1116<-0.5){[[abs(round(PcChangeDomestic1116,1))]]% lower than in}elseif(PcChangeTransport1116>0.5){[[abs(round(PcChangeTransport1116,1))]]% higher than in}elseif(PcChangeTransport1116<0.5&&PcChangeTransport1116>-0.5){in line with}]] 2011.}]]
+
+[[if(v_16LULUCF>0){The Department for Business, Energy and Industrial Strategy also takes into account the amount of CO₂ produced by activities that modify the natural environment, such as the clearing of forests for use in agriculture, and the carbon dioxide taken out of air by the woodland.According to its estimates, agrarian activities released more greenhouse gases than forests could get rid of, being responsible for [[abs(round(Pc16LULUCF,1))]]% of the carbon emissions in 2016.}else{The Department for Business, Energy and Industrial Strategy also takes into account the amount of CO₂ taken out of the air by the woodland.According to its estimates, forests got rid of [[abs(round(Pc16LULUCF,1))]]% of the carbon emissions caused by human activities in 2016.}]]
+
+Gareth Redmond-King, head of climate change at the World Wildlife Fund UK, put the increase in emissions from transport down to the greater number of large cars on British roads.
+
+He said: "We’re aping the American market and more drivers are switching to unnecessarily large vehicles with greater carbon emissions. Bigger vehicles tend to be less efficient on fuel use.
+
+Jason Torrance, a transport expert at UK100, a network of local governments committed to promoting clean energy, called on the Government to take urgent action to tackle transport emissions.
+
+He said: "It is expected that the Government will want to give local authorities more powers to tackle air pollution in the environment legislation next year. But without significant shifts on things like electrification of railway lines, cleaner buses and taxis, plus a shift away from car dependency by designing our cities better, this trend will only get worse."
+
+<!-- End -->
+
+<!-- This is the structure for PollutionRemoval Script -->
+
+How the natural environment is saving the NHS millions in [[FocusRowName]]
+
+Trees and plants in [[FocusRowName]] are helping the NHS to save [[if(MoneyMillion>=2){millions}else{thousands}]] of pounds by removing air pollution.
+
+A study for the Office for National Statistics (ONS) reveals that in 2015 the NHS avoided [[if(MoneyMillion>1){£[[round(MoneyMillion,1)]] million}elseif(MoneyMillion<1){£[[MoneyTotal]]}]] in health costs thanks to air quality improvements by natural vegetation. That's £[[round(MoneySaved_per_person,2)]] for every resident.
+
+Nationally, the ONS estimates there were 7,100 fewer lung and heart-related hospital admissions, 27,000 fewer life years lost and 1,900 fewer premature deaths thanks to the service provided by nature. The saving for the whole of the UK was £1 billion.
+
+Woodlands, grasslands and shrubs in [[FocusRowName]] absorbed [[if(Total<=1000000){[[Total]] kg}else{[[round(div(Total,1000000),1)]] tonnes}]] of air pollutants - [[if(kgSavedperHA>73){about [[round(kgSavedperHA,0)]] kg of contaminants per hectare, one of the highest rates in the UK.}elseif(kgSavedperHA<13){about [[round(kgSavedperHA,0)]] kg of contaminants per hectare, one of the lowest rates in the UK.}elseif(kgSavedperHA==maxVal(kgSavedperHAColumn)){about [[round(kgSavedperHA,0)]] kg of contaminants per hectare, the highest rate in the UK.}elseif(kgSavedperHA==minVal(kgSavedperHAColumn)){about [[round(kgSavedperHA,0)]] kg of contaminants per hectare, the lowest rate in the UK.}else{about [[round(kgSavedperHA,0)]] kg of contaminants per hectare.}]]
+
+The most harmful of these substances is PM2.5, small particles with a diameter of less than 2.5 micrometres - about 3% of the diameter of a human hair. These particles can trigger chronic disease such as asthma, heart disease, bronchitis, and cause other respiratory problems
+
+The data also includes PM10, sulphur dioxide, nitrogen dioxide, ground-level ozone and ammonia.
+
+In [[FocusRowName]], [[substitute(substitute(substitute(substitute(substitute(substitute(columnNames(max(columnsInRegion(FocusRow,PcremovedofNH3Column,PcremovedofNO2Column,Pcremovedof_SO2Column,PcremovedofPM2_5Column,PcremovedofPM10Column,PcremovedofO3Column))),'PcremovedofNH3','ammonia'),'PcremovedofNO2','nitrogen dioxide'),'Pcremovedof_SO2','sulphur dioxide'),'PcremovedofPM2_5','PM2.5'),'PcremovedofPM10','PM10'),'PcremovedofO3','ozone ')]] was the pollutant most absorbed by plants, making up about [[round(maxVal(columnsInRegion(FocusRow,PcremovedofNH3Column,PcremovedofNO2Column,Pcremovedof_SO2Column,PcremovedofPM2_5Column,PcremovedofPM10Column,PcremovedofO3Column)),0)]]% of the total.
+
+According to the ONS, trees account for the highest volume of air pollutants removed by vegetation.
+
+Overall, the study shows that 1.4 billion kg of harmful substances were taken out by vegetation in the UK in 2015.
+
+Professor Paul Cosford, Medical Director and Director of Health Protection at Public Health England, said:
+
+"Air pollution is a growing threat to the public’s health, evidence shows it has a strong causal association with coronary heart disease, stroke, lung cancer and childhood asthma."
+
+Karen Exley, Head of Public Health England’s air quality and public health group, added:
+
+“Long-term exposure to particulate matter is known to be a contributory factor in early deaths, particularly for people with cardiovascular and respiratory disease, and is estimated to have an effect equivalent to 29,000 deaths a year in the UK.
+
+“Long-term exposure to nitrogen dioxide is also thought to contribute to early deaths although its effects have yet to be quantified.”
+
+A study published by the British Heart Foundation last week links levels of air pollution well below the UK’s current legal limits with serious changes in the heart structure.
+
+Simon Gillespie, Chief Executive at the British Heart Foundation, said:
+
+"Although the increase in heart chamber size is small in this study, it is an early warning sign, which may explain the increased risk of heart failure in individuals exposed to higher level of pollution.
+
+“We urge the Government to adopt the more stringent World Health Organization air quality guidelines."
+
+The health and social care costs of air pollution in England could reach £18.6 billion by 2035 unless action is taken, according to Public Health England.
+
+Last year, the cost was estimated to be £157 million.
+
+<!-- End -->
