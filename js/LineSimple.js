@@ -157,7 +157,7 @@ d3.csv("datasets/datafirstgraph.csv", function(error, data) {
                 .style('font-weight', 'bold')
                 .style('font-family', 'Lato, Arial')
                 .style('fill', 'black')
-                .text("How " + city + " is doing");
+                .text("How is" + city + "doing?");
 
               //  subtitle
               svg1.append('text')

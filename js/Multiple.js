@@ -222,7 +222,7 @@ d3.csv("datasets/multipledata.csv", function(error, data) {
                 .style('font-weight', 'bold')
                 .style('font-family', 'Lato, Arial')
                 .style('fill', 'black')
-                .text("Who is responsible for polluting in " + city);
+                .text("Who is responsible for polluting in " + city + "?");
 
               //  subtitle
               svg.append('text')
